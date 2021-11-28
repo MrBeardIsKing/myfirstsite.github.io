@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-shadow: border-box;
+
+}
+body.{
+	background: #ffffff;
+	font-family: 'source sans pro', sans-serif;
+
+}
+
+/*.........................................................
+      TYPOGRAPHY
+............................................................*/ 
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 300;
+}     
+
+h1 { 
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 50PX;
+}
+
+h2{
+	font-size: 30px;
+	line-height: 40px;
+	margin-top: 0;
+}
+
+h3{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+h4{
+	color: #505050;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+p{
+	color: #757575;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 29px;
+	letter-spacing: 0.5px;
+}
+
+
+/*----------------------------------------------------------------------
+       BUTTONS
+-----------------------------------------------------------------------*/       
+
+
+
+.section-btn{
+	margin: 32px 0 0 0;
+	padding: 0;
+}
+
+.section-btn a{
+	color: #fff;
+	font-weight: normal;
+	line-height: 45px;
+	perspective: 1000px;
+
+}
+
+.section-btn a span{
+	position: relative;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 0.5px;
+	padding: 2px 27px;
+	background: #4dc47d;
+	border-radius: 1px;
+	transition: transform 0.3s;
+	transform-origin: 50% 0;
+	transform-style: preserve-3d;
+}
+
+.section-btn a span::before{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	background: #000;
+	border-radius: 1px;
+	padding: 2px 27px;
+	transition: background 0.3s;
+	transform: rotateX(-90deg);
+	content: attr(data-hover);
+	transform-origin: 50% 0;
+}
+
+.section-btn a:hover span,
+.section-btn a:focus span{
+	transform: rotateX(90deg) translateY(-22px);
+}
+
+
+
+
+
+
+
+/*-------------------------------------------------------------
+    GENERAL
+---------------------------------------------------------------*/
+
+
+.bg{
+	background: transparent;
+	transition: 0.2s ease;
+}
+
+.bg.scrolled{
+	background: #4dc47d;
+} 
+
+
+#about, #project,
+#team, #contact, footer {
+	background: #ffffff;
+}
+
+
+
+/*-----------------------------------------------------------------
+      MENU
+------------------------------------------------------------------*/
+
+
+.navbar .navbar-brand{
+	font-weight: normal;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-link{
+	font-weight: normal;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	padding: 0;
+	text-transform: uppercase;
+	transition: all-ease-in 0.4s;
+	color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-link:hover{
+   background: transparent;
+   color: #fff;
+}
+
+.navbar .navbar-nav .nav-link::after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: transparent;
+	transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover::after{
+
+	width: 100%;
+	background: #fff;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+     HOME
+--------------------------------------------------------------------*/
+
+
+#home {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	position: relative;
+}
+
+#home video{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+	transform: translateX(-50%) translateY(-50%);
+	baseline-shift: cover;
+	object-fit: cover;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: -100;
+	transition: 1s opacity;
+}
+
+#home .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.75);
+}
+
+#home h1{
+	color: #fff;
+	font-size: 7vw;
+	line-height: 1.2em;
+
+}
+
+#home p{
+	color: rgba(250, 250, 250, 0.7);
+}
+
+#home .home-text{
+	z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+     ABOUT
+--------------------------------------------------------------------*/
+
+
+#about{
+	position: relative;
+}
+
+#about h3	{
+	font-size: 14px;
+	letter-spacing: 12px;
+	text-transform: uppercase;
+}
+
+
+/*------------------------------------------------------------------
+     PROJECT
+--------------------------------------------------------------------*/
+
+
+#project .project-item {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 25px;
+	padding: 0;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#project .project-item .project-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: all ease-in-out 0.4s;
+}
+#project .project-item:hover .project-overlay{
+     opacity: 1;
+}
+
+#project .project-item .project-overlay .project-info{
+	padding: 12em 0;
+}
+
+.project-info h1{
+	color: #fff;
+	margin: 0;
+}
+
+.project-info h3{
+	color: #d9d9d9;
+	margin-top: 0;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+
+}
+.project-item img{
+	transition: all ease-in-out 0.4s;
+}
+
+.project-item:hover img{
+     transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+     TEAM
+--------------------------------------------------------------------*/
+
+
+.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .swiper-slide .text h3{
+      	font-weight: 200;
+
+      }
+      
+      .swiper-slide .text h3 span{
+      	font-weight: 500;
+
+      }
+
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+
+/*------------------------------------------------------------------
+     CONTACT
+--------------------------------------------------------------------*/           
+
+
+#contact{
+	background: url(../images/image4.jpg) 50% 0 repeat-y fixed;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+
+}
+
+#contact .form-control{
+	border: none;
+	box-shadow: none;
+	font-size: 18px;font-weight: normal;
+	margin-bottom: 22px;
+}
+
+#contact .form-control:focus{
+	border-color: #d9d9d9;
+
+}
+
+#contact input{
+	height: 55px;
+	line-height: 45px;
+
+}
+
+
+/*------------------------------------------------------------------
+     FOOTER
+--------------------------------------------------------------------*/
